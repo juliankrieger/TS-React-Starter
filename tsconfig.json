@@ -1,6 +1,8 @@
 {
-  "compilerOptions": {
+  "compilerOptions": { 
+    "module": "commonjs",
     "target": "es5",
+    "lib": ["es6", "dom"],
     "allowJs": true,
     "skipLibCheck": false,
     "esModuleInterop": true,
@@ -12,9 +14,24 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "paths": {
+      "@material-ui/core": ["./material-ui/src"],
+      "@material-ui/core/*": ["./material-ui/src/*"],
+      "@material-ui/lab": ["./material-ui-lab/src"],
+      "@material-ui/lab/*": ["./material-ui-lab/src/*"]
+     }
   },
   "include": [
     "src"
-  ]
+  ],
+  "extends": [],
+  "defaultSeverity": "warning",
+  "linterOptions": {
+     "exclude": [
+       "config/**/*.js",
+       "node_modules/**/*.ts"
+     ]
+   }
+ }
 }
